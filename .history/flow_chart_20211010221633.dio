@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="L15tOZfDJ0sB663_3Ugt" name="ページ1">
-        <mxGraphModel dx="924" dy="3137" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="923" dy="1925" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -82,10 +82,10 @@
                 <mxCell id="24" value="機能名：ログイン&lt;br&gt;処理内容：入力されたパスワードとユーザー名をDBと照合&lt;br&gt;データの取得元：ユーザー情報を補完するDB、ｈｔｍｌ、必要な場合のＡＰＩ&lt;br&gt;ユーザーが行う操作：ユーザー名、パスワードの入力の後、ログインボタンをクリック" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;" parent="1" vertex="1">
                     <mxGeometry x="702" y="-150" width="278" height="200" as="geometry"/>
                 </mxCell>
-                <mxCell id="27" value="機能名：選択された単語の解説&lt;br&gt;処理内容：dbから該当する単語について説明されたものを取得する。&lt;br&gt;dbから取得した解説情報を全て表示。&lt;br&gt;アイコンをクリック。&lt;br&gt;必要なデータ：単語情報、解説情報&lt;br&gt;&lt;br&gt;ユーザーの操作：入力するアイコンをクリック" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;base=10;direction=west;rotation=0;" vertex="1" parent="1">
+                <mxCell id="27" value="機能名：選択された単語の解説&lt;br&gt;処理内容：dbから該当する単語について説明されたものを取得する。&lt;br&gt;それを表示する。&lt;br&gt;アイコンをクリック。どの単語かを指定して、ページ遷移。&lt;br&gt;&lt;br&gt;ユーザーの操作：入力アイコンをクリック" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;base=10;direction=west;rotation=0;" vertex="1" parent="1">
                     <mxGeometry x="70" y="1050" width="400" height="152.5" as="geometry"/>
                 </mxCell>
-                <mxCell id="29" value="機能名：単語解説投稿&lt;br&gt;処理内容：入力内容を単語と紐付けてDBに登録。&lt;br&gt;処理に必要なでーた：単語情報&lt;br&gt;登録したら、解説のページに遷移。&lt;br&gt;ユーザーの操作：解説内容の入力、投稿ボタンクリック" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;direction=west;base=0;" vertex="1" parent="1">
+                <mxCell id="29" value="機能名：単語解説投稿&lt;br&gt;処理内容：入力内容を単語と紐付けてDBに登録。&lt;br&gt;処理に必要なでーた：単語のデータ、解説を格納するdbテーブル&lt;br&gt;登録したら、解説のページに遷移。&lt;br&gt;ユーザーの操作：" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;direction=west;base=0;" vertex="1" parent="1">
                     <mxGeometry x="520" y="1006.25" width="280" height="150" as="geometry"/>
                 </mxCell>
                 <mxCell id="30" value="" style="endArrow=classic;html=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;entryX=0.995;entryY=0.335;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="9" target="7">
@@ -94,35 +94,26 @@
                         <mxPoint x="440" y="840" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="31" value="&lt;b&gt;解説情報DB&lt;br&gt;&lt;/b&gt;解説情報id (primary key)&lt;br&gt;・単語と紐付けするカラム（foreign key）&lt;br&gt;・ログイン機能をつけた場合、ユーザー紐付けカラム (foreign key)&lt;br&gt;・解説カラム" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+                <mxCell id="31" value="解説DB&lt;br&gt;&lt;br&gt;・単語と紐付けするカラム（foreign key）&lt;br&gt;・ログイン機能をつけた場合、ユーザー紐付けカラム&lt;br&gt;・解説カラム(text)&lt;br&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
                     <mxGeometry x="1960" y="490" width="260" height="190" as="geometry"/>
                 </mxCell>
-                <mxCell id="43" value="dbへ登録" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
-                    <mxGeometry x="627" y="720" width="80" height="80" as="geometry"/>
-                </mxCell>
-                <mxCell id="44" value="" style="endArrow=classic;html=1;exitX=0.603;exitY=-0.001;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="9" target="43">
+                <mxCell id="34" value="" style="curved=1;endArrow=classic;html=1;entryX=-0.002;entryY=0.636;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="9" target="31">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="620" y="860" as="sourcePoint"/>
-                        <mxPoint x="670" y="810" as="targetPoint"/>
+                        <mxPoint x="670" y="986.25" as="sourcePoint"/>
+                        <mxPoint x="740.7106781186548" y="936.25" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="1930" y="670"/>
+                        </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="46" value="dbへ検索" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-                    <mxGeometry x="426" y="710" width="120" height="60" as="geometry"/>
+                <mxCell id="35" value="入力された解説データ" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+                    <mxGeometry x="860" y="840" width="80" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="48" value="" style="endArrow=classic;html=1;" edge="1" parent="1">
+                <mxCell id="41" value="" style="endArrow=classic;startArrow=classic;html=1;" edge="1" parent="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="380" y="820" as="sourcePoint"/>
-                        <mxPoint x="430" y="770" as="targetPoint"/>
+                        <mxPoint x="440" y="820" as="sourcePoint"/>
+                        <mxPoint x="490" y="770" as="targetPoint"/>
                     </mxGeometry>
-                </mxCell>
-                <mxCell id="49" value="&lt;b&gt;単語情報DB&lt;/b&gt;&lt;br&gt;・単語情報Id (primary key)&lt;br&gt;&lt;b&gt;・&lt;/b&gt;単語カラム" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
-                    <mxGeometry x="1960" y="190" width="260" height="200" as="geometry"/>
-                </mxCell>
-                <mxCell id="50" value="&lt;b&gt;ユーザー情報DB&lt;/b&gt;&lt;br&gt;・ユーザー情報id (primary key)&lt;br&gt;・名前&lt;br&gt;・etc.." style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
-                    <mxGeometry x="1960" y="-130" width="260" height="190" as="geometry"/>
-                </mxCell>
-                <mxCell id="51" value="いいねDB&lt;br&gt;・ユーザーId (foreign key)&lt;br&gt;・解説情報id (foreign key)&lt;br&gt;・" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
-                    <mxGeometry x="2290" y="210" width="190" height="210" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>

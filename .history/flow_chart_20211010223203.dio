@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="L15tOZfDJ0sB663_3Ugt" name="ページ1">
-        <mxGraphModel dx="924" dy="3137" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="573" dy="1872" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -94,7 +94,7 @@
                         <mxPoint x="440" y="840" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="31" value="&lt;b&gt;解説情報DB&lt;br&gt;&lt;/b&gt;解説情報id (primary key)&lt;br&gt;・単語と紐付けするカラム（foreign key）&lt;br&gt;・ログイン機能をつけた場合、ユーザー紐付けカラム (foreign key)&lt;br&gt;・解説カラム" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+                <mxCell id="31" value="&lt;b&gt;解説情報DB&lt;br&gt;&lt;/b&gt;解説情報id (primary key)&lt;br&gt;・単語と紐付けするカラム（foreign key）&lt;br&gt;・ログイン機能をつけた場合、ユーザー紐付けカラム (foreign key)&lt;br&gt;・解説カラム(text)" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
                     <mxGeometry x="1960" y="490" width="260" height="190" as="geometry"/>
                 </mxCell>
                 <mxCell id="43" value="dbへ登録" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
@@ -117,12 +117,6 @@
                 </mxCell>
                 <mxCell id="49" value="&lt;b&gt;単語情報DB&lt;/b&gt;&lt;br&gt;・単語情報Id (primary key)&lt;br&gt;&lt;b&gt;・&lt;/b&gt;単語カラム" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
                     <mxGeometry x="1960" y="190" width="260" height="200" as="geometry"/>
-                </mxCell>
-                <mxCell id="50" value="&lt;b&gt;ユーザー情報DB&lt;/b&gt;&lt;br&gt;・ユーザー情報id (primary key)&lt;br&gt;・名前&lt;br&gt;・etc.." style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
-                    <mxGeometry x="1960" y="-130" width="260" height="190" as="geometry"/>
-                </mxCell>
-                <mxCell id="51" value="いいねDB&lt;br&gt;・ユーザーId (foreign key)&lt;br&gt;・解説情報id (foreign key)&lt;br&gt;・" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
-                    <mxGeometry x="2290" y="210" width="190" height="210" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
