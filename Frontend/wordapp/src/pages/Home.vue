@@ -13,14 +13,22 @@
 </template>
 
 <script>
+import axios from "../axios-for-auth.js"; //axiosのインスタンスをインポート
+// import axios from 'axios';
 export default {
+  //data追記
+  data() {
+    return {
+      word_name: "",
+      field_id: "",
+    };
+  },
   methods: {
     getWord() {
-      return;
-      //DBから検索した単語獲得
+      axios.get("//localhost:5000", {
+        word: this.res.data.words, //DBから検索した単語獲得
+      });
     },
-
-
   },
 };
 </script>

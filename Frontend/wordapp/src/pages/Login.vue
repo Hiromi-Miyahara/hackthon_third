@@ -29,7 +29,7 @@ export default {
   methods: {
     login() {//axiosでログイン用のインスタンスにアクセスするメソッドを定義
       axios.post( //エンドポイントのURLがログイン用のものを使う
-        '/accounts:signInWithPassword?key=AIzaSyAnhZpWVg_cweTrgCMli-aQNbkhCo6zWNA',
+        '//localhost:5002',
         {
           email: this.email,//送る情報は新規登録と同じ
           password: this.password,
