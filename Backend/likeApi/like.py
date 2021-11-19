@@ -1,3 +1,4 @@
+from modules.likeSql import LikeSql
 from flask import Flask, request, jsonify
 
 from flask_cors import CORS
@@ -8,31 +9,28 @@ import os
 import sys
 
 sys.path.append(os.path.abspath(".."))
-from modules.likeSql import LikeSql
 
 app = Flask(__name__)
 
-#CORS
+# CORS
 CORS(app, origins=['http://locaohot:8080'])
 
 
-
-
-#いいね追加
+# いいね追加
 @app.route("/", methods=["POST"])
 def add_like():
 
-    #sqlオブジェクトを呼び出し
-    sqlClass = LikeSql() 
-    #リクエストを受ける
+    # sqlオブジェクトを呼び出し
+    sqlClass = LikeSql()
+    # リクエストを受ける
     data = request.get_json(force=True)
-    #リクエストデータ分割
-    #ユーザーID
+    # リクエストデータ分割
+    # ユーザーID
     user_id = data.get('user_id', None)
-    #解説ID
+    # 解説ID
     explanation_id = data.get('explanation_id', None)
-    
-    #sql文を介して、DBにアクセス。いいね追加
+
+    # sql文を介して、DBにアクセス。いいね追加
     try:
         query = "INSERT INTO in_short.likes (user_id, explanation_id) VALUES (%s,%s);"
         result = sqlClass.postLike(query, user_id, explanation_id)
@@ -47,28 +45,27 @@ def add_like():
     finally:
         sqlClass.closeConnection()
 
-    
     return jsonify(body), 200
-    
 
-#いいね取得
+
+# いいね取得
 @app.route("/get", methods=["GET"])
 def get_like():
 
-    #sqlオブジェクト呼び出し
+    # sqlオブジェクト呼び出し
     sqlClass = LikeSql()
 
-    #リクエストを受け取る
+    # リクエストを受け取る
     data = request.get_json()
-    #リクエストデータ分割
-    #単語id
+    # リクエストデータ分割
+    # 単語id
     word_id = data.get('word_id', None)
-    #解説ID
+    # 解説ID
     explanation_id = data.get('explanation_id', None)
-    
-    #いいね取得
+
+    # いいね取得
     try:
-        #countする
+        # countする
         query = "SELECT explanation_id, COUNT(explanation_id) FROM in_short.likes WHERE word_id = %s GROUP BY explanation_id;"
 
         result = sqlClass.getLike(query, word_id, explanation_id)
@@ -81,26 +78,25 @@ def get_like():
 
     finally:
         sqlClass.closeConnection()
-    
-    return jsonify(body), 200
 
+    return jsonify(body), 200
 
 
 @app.route("/delete", methods=["DELETE"])
 def delete_like():
-    
-    #sqlオブジェクト呼び出し
+
+    # sqlオブジェクト呼び出し
     sqlClass = LikeSql()
 
-    #リクエストを受ける
+    # リクエストを受ける
     data = request.get_json(force=True)
-    #リクエストデータ分割
-    #ユーザーID
+    # リクエストデータ分割
+    # ユーザーID
     user_id = data.get('user_id', None)
-    #解説ID
+    # 解説ID
     explanation_id = data.get('explanation_id', None)
-    
-    #sql文を介して、DBにアクセス。いいね追加
+
+    # sql文を介して、DBにアクセス。いいね追加
     try:
         query = ""
         result = sqlClass.postLike(query, user_id, explanation_id)
@@ -115,11 +111,8 @@ def delete_like():
     finally:
         sqlClass.closeConnection()
 
-    
     return jsonify(body), 200
 
 
-
-
-if __name__ = "__main__":
+if __name__ == "__main__":
     app.run(debug=True, port=5004)

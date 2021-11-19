@@ -86,23 +86,23 @@ class WordInfoManageSql(ObjectManageSql):
         return "update success"
 
     #ログインユーザーもしくは単語idの存在確認(引数に、ユーザーidか、単語id)
-    def check_loginduser_or_exsistedword(self, the_id):
+    # def check_loginduser_or_exsistedword(self, the_id):
 
-        #カーソルオブジェクト呼び出し
-        cursor = self.connection.cursor()
+    #     #カーソルオブジェクト呼び出し
+    #     cursor = self.connection.cursor()
 
-        #ユーザか、単語の存在チェック
-        try:
-            cursor.execute(query,(the_id))
-            #値取り出し
-            result = cursor.fetchone()
-        except Exception as e:
-            print("Exception error check_loginduser_or_exsistedword()")
-            print(e)
+    #     #ユーザか、単語の存在チェック
+    #     try:
+    #         cursor.execute(query,(the_id))
+    #         #値取り出し
+    #         result = cursor.fetchone()
+    #     except Exception as e:
+    #         print("Exception error check_loginduser_or_exsistedword()")
+    #         print(e)
 
-        finally:
-            cursor.close()
+    #     finally:
+    #         cursor.close()
         
-        #ないときは、どうする？
-        return result
+    #     #ないときは、どうする？
+    #     return result
 
