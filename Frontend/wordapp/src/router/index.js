@@ -5,6 +5,7 @@ import About from '../pages/About.vue'
 import Login from '../pages/Login.vue'
 import Register from '../pages/Register.vue'
 import Explain from '../pages/Explain.vue'
+import User from '../pages/User.vue'
 import store from '../store'
 
 Vue.use(VueRouter)
@@ -32,7 +33,7 @@ const routes = [
     name: 'Login',
     component: Login,
     beforeEnter(to, from, next) {
-      if (store.getters.idToken) {//すでにidTokenがあれば、"/"に飛ばす
+      if (Vue.$cookies.isKey('token')) {//すでにidTokenがあれば、"/"に飛ばす
         next("/");
       } else { //なければそのまま"/login"に
         next();
@@ -44,7 +45,7 @@ const routes = [
     name: 'Register',
     component: Register,
     beforeEnter(to, from, next) {
-      if (store.getters.idToken) {//すでにidTokenがあれば、"/"に飛ばす
+      if (Vue.$cookies.isKey('token')) {//すでにidTokenがあれば、"/"に飛ばす
         next("/");
       } else {//なければそのまま"/register"に
         next();
@@ -55,6 +56,18 @@ const routes = [
     path: '/explain',
     name: 'Explain',
     component: Explain,
+  },
+  {
+    path: '/user',
+    name: 'User',
+    component: User,
+    beforeEnter(to, from ,next) {
+      if (Vue.$cookies.isKey('token')) {
+        next()
+      } else {
+        next('login')
+      }
+    }
   }
 ]
 

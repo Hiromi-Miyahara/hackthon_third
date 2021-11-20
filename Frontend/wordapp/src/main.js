@@ -5,12 +5,13 @@ import store from './store'
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
-import SuiVue from 'semantic-ui-vue'
-import 'semantic-ui-css/semantic.min.css'
+import VueCookies from 'vue-cookies'
+import vueJquery from 'vue-jquery'
 
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
-Vue.use(SuiVue)
+Vue.use(VueCookies)
+Vue.use(vueJquery)
 
 Vue.config.productionTip = false
 
