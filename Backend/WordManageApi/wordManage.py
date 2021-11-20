@@ -10,7 +10,7 @@ sys.path.append(os.path.abspath(".."))
 
 #modules呼び出し
 from modules.wordManageSql import WordManageSql
-#ステータスコード 
+#ステータスコード
 HTTP_OK = 200
 HTTP_BAD_REQUEST = 400
 

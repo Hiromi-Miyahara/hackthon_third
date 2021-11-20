@@ -14,7 +14,6 @@
     <b-form-textarea
       id="textarea"
       v-model="text"
-      placeholder="Enter something..."
       rows="5"
       max-rows="10"
     ></b-form-textarea>

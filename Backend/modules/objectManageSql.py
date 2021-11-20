@@ -23,8 +23,9 @@ class ObjectManageSql(object):
            password = self.__password,
            db       = self.__db,
            cursorclass=pymysql.cursors.DictCursor)
+        print(self.__host)
 
-    
+
 
     @property
     def connection(self):

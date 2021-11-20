@@ -5,9 +5,12 @@
       <input class="form-control mr-sm-2" type="text" placeholder="Search" />
       <br />
       <b-button variant="outline-success" @click="getWord()"> Search </b-button>
-
       <!-- 単語一覧表示 -->
+      <ul>
+        <li v-for="word in words" :key="word.id">{{ word }}</li>
+      </ul>
       <!-- DBの単語情報を表示  -->
+
     </div>
   </div>
 </template>
@@ -21,13 +24,18 @@ export default {
     return {
       word_name: "",
       field_id: "",
+      words:[]
     };
   },
   methods: {
     getWord() {
-      axios.get("//localhost:5000", {
-        word: this.res.data.words, //DBから検索した単語獲得
-      });
+      axios.get("//localhost:5000")
+      .then(response => {
+        this.words = response.data.words
+        console.log(response.data.words);
+        //DBから検索した単語獲得
+      }
+      )
     },
   },
 };
