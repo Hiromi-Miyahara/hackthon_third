@@ -9,17 +9,6 @@
     </div>
     <br /><br /><br />
     <h2>解説投稿</h2>
-<<<<<<< HEAD
-    <b-form-textarea
-      id="textarea"
-      v-model="text"
-      rows="5"
-      max-rows="10"
-    ></b-form-textarea>
-    <br /><br />
-    <!-- <pre class="mt-3 mb-0">{{ text }}</pre> -->
-    <b-button variant="primary" @click="post">投稿する</b-button>
-=======
     <template v-if="checkLogined">
       <b-form-textarea
         id="textarea"
@@ -35,7 +24,6 @@
     <template v-else>
       <p style="color: gray;">(投稿するにはログインが必要です。)</p>
     </template>
->>>>>>> df7348158775efe76651d71d312bec3df8b62d20
   </div>
 </template>
 

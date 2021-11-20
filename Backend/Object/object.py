@@ -7,6 +7,3 @@ import os
 import sys
 
 class Object():
-
-
-    

@@ -18,7 +18,7 @@
         </div>
       </div>
 
-      <div class="form-bottom"> 
+      <div class="form-bottom">
           <button type="submit" class="btn btn-outline-dark" style="margin-top: 30px;" @click="register()">登録</button>
       </div>
     </div>

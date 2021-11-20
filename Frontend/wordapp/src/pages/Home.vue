@@ -4,14 +4,12 @@
     <div class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="text" placeholder="Search" />
       <br />
-=======
       <b-button variant="outline-success"> 用語検索 </b-button>
       <ul style="list-style: none;">
         <li v-for="word in words" :key="word.word_name">
           <router-link to="/explain" style="text-decoration: none; color: black;" @click.native="setWordId(word.id, word.word_name)">{{word.word_name}}</router-link>
         </li>
       </ul>
->>>>>>> df7348158775efe76651d71d312bec3df8b62d20
       <!-- 単語一覧表示 -->
       <ul>
         <li v-for="word in words" :key="word.id">{{ word }}</li>
