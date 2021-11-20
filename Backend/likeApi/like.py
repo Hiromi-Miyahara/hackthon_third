@@ -4,7 +4,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 
 from dotenv import load_dotenv
-
+load_dotenv()
 import os
 import sys
 
@@ -86,7 +86,7 @@ def get_like():
     return jsonify(body), HTTP_OK 
 
 
-    return jsonify(body), 200
+    # return jsonify(body), 200
 
 
 @app.route("/delete", methods=["DELETE"])

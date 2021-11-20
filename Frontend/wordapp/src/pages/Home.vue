@@ -6,9 +6,14 @@
       <br />
       <b-button variant="outline-success"> 用語検索 </b-button>
       <ul style="list-style: none;">
-        <li v-for="word in words" :key="word.word_name">
+        <!-- <li v-for="word in words" :key="word.word_name">
           <router-link to="/explain" style="text-decoration: none; color: black;" @click.native="setWordId(word.id, word.word_name)">{{word.word_name}}</router-link>
-        </li>
+        </li> -->
+        <b-list-group horizontal>
+        <b-list-group-item v-for="word in words" :key="word.word_name">
+          <router-link to="/explain" style="text-decoration: none; color: black;" @click.native="setWordId(word.id, word.word_name)">{{word.word_name}}</router-link>
+        </b-list-group-item>
+        </b-list-group>
       </ul>
       <!-- 単語一覧表示 -->
       <!-- DBの単語情報を表示  -->
